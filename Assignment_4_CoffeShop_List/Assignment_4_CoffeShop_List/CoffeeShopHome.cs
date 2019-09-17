@@ -25,7 +25,7 @@ namespace Assignment_4_CoffeShop_List
         
         private void ShowInfo()
         {
-            
+            purchaseRichTextBox.Text = " ";
             string see = " ";
             allInfos.AddRange(names);
             allInfos.AddRange(numbers);
@@ -40,24 +40,26 @@ namespace Assignment_4_CoffeShop_List
                 see += "Address: " + addresses[i] + "\n";
                 see += "Order: " + comboBoxItems[i] + "\n";
                 see += "Quantity: " + quantities[i] + "\n";
-                totalPrice = quantities[i] * 120;
-               /* if (comboBoxItems[i] == "Black")
+                for (int j = 0; j < quantities.Count(); j++)
                 {
-                    totalPrice = quantities[i] * 120;
+
+                    if (comboBoxItems[j] == "Black")
+                    {
+                        totalPrice = quantities[j] * 120;
+                    }
+                    else if (comboBoxItems[i] == "Cold")
+                    {
+                        totalPrice = quantities[j] * 100;
+                    }
+                    else if (comboBoxItems[i] == "Hot")
+                    {
+                        totalPrice = quantities[j] * 90;
+                    }
+                    else if (comboBoxItems[i] == "Regular")
+                    {
+                        totalPrice = quantities[j] * 80;
+                    }
                 }
-                else if (comboBoxItems[i] == "Cold")
-                {
-                    totalPrice = quantities[i] * 100;
-                }
-                else if (comboBoxItems[i] == "Hot")
-                {
-                    totalPrice = quantities[i] * 90;
-                }
-                else if (comboBoxItems[i] == "Regular")
-                {
-                    totalPrice = quantities[i] * 80;
-                }
-                */
             }
             /*for(int i=0;i<numbers.Count();i++)
             {
@@ -75,7 +77,7 @@ namespace Assignment_4_CoffeShop_List
             {
                 see += "Quantity: " + quantity + "\n";
             }*/
-            purchaseRichTextBox.AppendText(see);
+            purchaseRichTextBox.AppendText(see+totalPrice);
 
 
         }
@@ -83,11 +85,12 @@ namespace Assignment_4_CoffeShop_List
 
         private void AddInfo()
         {
-             /*List<string> names = new List<string> { };
-             List<string> numbers = new List<string> { };
-             List<string> addresses = new List<string> { };
-             List<string> comboBoxItems = new List<string> { };
-             List<int> quantities = new List<int> { };*/
+            purchaseRichTextBox.Text = "Purchase Information";
+            /*List<string> names = new List<string> { };
+            List<string> numbers = new List<string> { };
+            List<string> addresses = new List<string> { };
+            List<string> comboBoxItems = new List<string> { };
+            List<int> quantities = new List<int> { };*/
             names.Add(nameTextBox.Text);
             numbers.Add(ContactNumberTextBox.Text);
             addresses.Add(addressTextBox.Text);
@@ -122,30 +125,29 @@ namespace Assignment_4_CoffeShop_List
                 seeInfo += "Address: " + addresses[i] + "\n";
                 seeInfo += "Order: " + comboBoxItems[i] + "\n";
                 seeInfo += "Quantity: " + quantities[i] + "\n";
-                totalPrice = quantities[i] * 120;
+
+
             }
-            /*for (int i= 0;i<quantities.Count();i++)
-            {
-                seeInfo += "\nQuantity: " + quantities[i];
+
 
                 if (itemComboBox.Text == "Black")
                 {
-                    totalPrice = quantities[i] * 120;
+                    totalPrice = quantities[0] * 120;
                 }
                 else if (itemComboBox.Text == "Cold")
                 {
-                    totalPrice = quantities[i] * 100;
+                    totalPrice = quantities[0] * 100;
                 }
                 else if (itemComboBox.Text == "Hot")
                 {
-                    totalPrice = quantities[i] * 90;
+                    totalPrice = quantities[0] * 90;
                 }
                 else if (itemComboBox.Text == "Regular")
                 {
-                    totalPrice = quantities[i] * 80;
+                    totalPrice = quantities[0] * 80;
                 }
-            }*/
-            purchaseRichTextBox.AppendText("\n" + seeInfo + "\nTotal Price: " + totalPrice);
+            
+            purchaseRichTextBox.AppendText("\n" + seeInfo + "Total Price: " + totalPrice);
             // MessageBox.Show("\n" + seeInfo + "\nTotal Price: " + totalPrice);
            // purchaseRichTextBox.Text = "Purchase Information\n";
 
@@ -176,7 +178,8 @@ namespace Assignment_4_CoffeShop_List
             addressTextBox.Text = " ";
             itemComboBox.Text = "Select An Item";
             quantityTextBox.Text = " ";
-           // purchaseRichTextBox.Text = " ";
+            //purchaseRichTextBox.Text = " ";
+            
         }
     }
 }
