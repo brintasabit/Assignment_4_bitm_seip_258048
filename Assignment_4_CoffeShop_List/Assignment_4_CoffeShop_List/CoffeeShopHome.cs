@@ -19,13 +19,63 @@ namespace Assignment_4_CoffeShop_List
         List<string> addresses = new List<string> { };
         List<string> comboBoxItems = new List<string> { };
         List<int> quantities = new List<int> { };
+        List<string> allInfos = new List<string> {  };
 
-
-        int index = 0;
+        
         
         private void ShowInfo()
         {
-            MessageBox.Show(purchaseRichTextBox.Text);
+            
+            string see = " ";
+            allInfos.AddRange(names);
+            allInfos.AddRange(numbers);
+            allInfos.AddRange(addresses);
+            allInfos.AddRange(comboBoxItems);
+            //allInfo.AddRange(Convert.ToInt32(quantities));
+            int totalPrice = 0;
+            for(int i=0;i<names.Count();i++)
+            {
+                see +="\nName: " + names[i]+"\n";
+                see += "Number: " + numbers[i] + "\n";
+                see += "Address: " + addresses[i] + "\n";
+                see += "Order: " + comboBoxItems[i] + "\n";
+                see += "Quantity: " + quantities[i] + "\n";
+                totalPrice = quantities[i] * 120;
+               /* if (comboBoxItems[i] == "Black")
+                {
+                    totalPrice = quantities[i] * 120;
+                }
+                else if (comboBoxItems[i] == "Cold")
+                {
+                    totalPrice = quantities[i] * 100;
+                }
+                else if (comboBoxItems[i] == "Hot")
+                {
+                    totalPrice = quantities[i] * 90;
+                }
+                else if (comboBoxItems[i] == "Regular")
+                {
+                    totalPrice = quantities[i] * 80;
+                }
+                */
+            }
+            /*for(int i=0;i<numbers.Count();i++)
+            {
+                see +="Number: "+ numbers[i]+"\n";
+            }*/
+            /*foreach (string address in addresses)
+            {
+                see += "Address: " + address + "\n";
+            }
+            foreach (string order in comboBoxItems)
+            {
+                see += "Order: " + order + "\n";
+            }
+            foreach (int quantity in quantities)
+            {
+                see += "Quantity: " + quantity + "\n";
+            }*/
+            purchaseRichTextBox.AppendText(see);
 
 
         }
@@ -33,63 +83,72 @@ namespace Assignment_4_CoffeShop_List
 
         private void AddInfo()
         {
-             List<string> names = new List<string> { };
+             /*List<string> names = new List<string> { };
              List<string> numbers = new List<string> { };
              List<string> addresses = new List<string> { };
              List<string> comboBoxItems = new List<string> { };
-             List<int> quantities = new List<int> { };
+             List<int> quantities = new List<int> { };*/
             names.Add(nameTextBox.Text);
             numbers.Add(ContactNumberTextBox.Text);
             addresses.Add(addressTextBox.Text);
 
             comboBoxItems.Add(itemComboBox.Text);
 
-
+            
             quantities.Add(Convert.ToInt32(quantityTextBox.Text));
 
             string seeInfo = " ";
             int totalPrice = 0;
-            foreach (string name in names)
+            /* foreach (string name in names)
+             {
+                 seeInfo += "\nName: " + name;
+             }
+             foreach (string number in numbers)
+             {
+                 seeInfo += "\nContact Number: " + number;
+             }
+             foreach (string address in addresses)
+             {
+                 seeInfo += "\nAddress: " + address;
+             }
+             foreach (string comboBoxItem in comboBoxItems)
+             {
+                 seeInfo += "\nOrder: " + comboBoxItem;
+             }*/
+            for (int i = 0; i < names.Count(); i++)
             {
-                seeInfo += "\nName: " + name;
+                seeInfo += "Name: " + names[i] + "\n";
+                seeInfo += "Number: " + numbers[i] + "\n";
+                seeInfo += "Address: " + addresses[i] + "\n";
+                seeInfo += "Order: " + comboBoxItems[i] + "\n";
+                seeInfo += "Quantity: " + quantities[i] + "\n";
+                totalPrice = quantities[i] * 120;
             }
-            foreach (string number in numbers)
+            /*for (int i= 0;i<quantities.Count();i++)
             {
-                seeInfo += "\nContact Number: " + number;
-            }
-            foreach (string address in addresses)
-            {
-                seeInfo += "\nAddress: " + address;
-            }
-            foreach (string comboBoxItem in comboBoxItems)
-            {
-                seeInfo += "\nOrder: " + comboBoxItem;
-            }
-            foreach (int quantity in quantities)
-            {
-                seeInfo += "\nQuantity: " + quantity;
-            }
-            if (itemComboBox.Text == "Black")
-            {
-                totalPrice = quantities[index] * 120;
-            }
-            else if (itemComboBox.Text == "Cold")
-            {
-                totalPrice = quantities[index] * 100;
-            }
-            else if (itemComboBox.Text == "Hot")
-            {
-                totalPrice = quantities[index] * 90;
-            }
-            else if (itemComboBox.Text == "Regular")
-            {
-                totalPrice = quantities[index] * 80;
-            }
+                seeInfo += "\nQuantity: " + quantities[i];
 
+                if (itemComboBox.Text == "Black")
+                {
+                    totalPrice = quantities[i] * 120;
+                }
+                else if (itemComboBox.Text == "Cold")
+                {
+                    totalPrice = quantities[i] * 100;
+                }
+                else if (itemComboBox.Text == "Hot")
+                {
+                    totalPrice = quantities[i] * 90;
+                }
+                else if (itemComboBox.Text == "Regular")
+                {
+                    totalPrice = quantities[i] * 80;
+                }
+            }*/
             purchaseRichTextBox.AppendText("\n" + seeInfo + "\nTotal Price: " + totalPrice);
-            
-            
-            
+            // MessageBox.Show("\n" + seeInfo + "\nTotal Price: " + totalPrice);
+           // purchaseRichTextBox.Text = "Purchase Information\n";
+
         }
         public CoffeeShopHome()
         {

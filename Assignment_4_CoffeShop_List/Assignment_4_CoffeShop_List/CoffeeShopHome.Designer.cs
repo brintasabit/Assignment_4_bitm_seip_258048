@@ -69,7 +69,7 @@
             // 
             // purchaseRichTextBox
             // 
-            this.purchaseRichTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.purchaseRichTextBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.purchaseRichTextBox.Location = new System.Drawing.Point(535, 25);
             this.purchaseRichTextBox.Name = "purchaseRichTextBox";
             this.purchaseRichTextBox.ReadOnly = true;
@@ -79,22 +79,26 @@
             // 
             // saveButton
             // 
+            this.saveButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButton.Location = new System.Drawing.Point(153, 431);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 39);
             this.saveButton.TabIndex = 3;
             this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // showButton
             // 
+            this.showButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.showButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showButton.Location = new System.Drawing.Point(321, 431);
             this.showButton.Name = "showButton";
             this.showButton.Size = new System.Drawing.Size(75, 39);
             this.showButton.TabIndex = 3;
             this.showButton.Text = "Show";
-            this.showButton.UseVisualStyleBackColor = true;
+            this.showButton.UseVisualStyleBackColor = false;
             this.showButton.Click += new System.EventHandler(this.showButton_Click);
             // 
             // itemComboBox
