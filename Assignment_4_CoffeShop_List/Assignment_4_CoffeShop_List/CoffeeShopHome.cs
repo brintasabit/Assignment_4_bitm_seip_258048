@@ -35,7 +35,8 @@ namespace Assignment_4_CoffeShop_List
                 see += "Quantity: " + quantities[i] + "\n";
                 see +="Total Price: "+totalPrices[i] + "\n";
             }
-            purchaseRichTextBox.AppendText(see);
+            
+            purchaseRichTextBox.Text+=see;
         }
 
 
@@ -79,9 +80,9 @@ namespace Assignment_4_CoffeShop_List
                 seeInfo += "Total Price: " + totalPrices[i] + "\n";
 
             }
-            purchaseRichTextBox.AppendText(seeInfo);
+            purchaseRichTextBox.Text +=seeInfo;
             // MessageBox.Show("\n" + seeInfo + "\nTotal Price: " + totalPrice);
-           // purchaseRichTextBox.Text = "Purchase Information\n";
+            //purchaseRichTextBox.Text = " ";
 
         }
         public CoffeeShopHome()
@@ -99,7 +100,7 @@ namespace Assignment_4_CoffeShop_List
                
         private void saveButton_Click(object sender, EventArgs e)
         {
-
+            //purchaseRichTextBox.Text = "Purchase Information";
             if (numbers.Contains(contactNumberTextBox.Text) == true)
             {
                 MessageBox.Show("Number Already Exists");
@@ -127,7 +128,7 @@ namespace Assignment_4_CoffeShop_List
             addressTextBox.Text = " ";
             itemComboBox.Text = "Select An Item";
             quantityTextBox.Text = " ";
-           // purchaseRichTextBox.Text = "Purchase Information";
+            
             
         }
     }
