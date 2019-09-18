@@ -35,7 +35,7 @@
             this.itemComboBox = new System.Windows.Forms.ComboBox();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.addressTextBox = new System.Windows.Forms.TextBox();
-            this.ContactNumberTextBox = new System.Windows.Forms.TextBox();
+            this.contactNumberTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@
             this.groupBox1.Controls.Add(this.itemComboBox);
             this.groupBox1.Controls.Add(this.quantityTextBox);
             this.groupBox1.Controls.Add(this.addressTextBox);
-            this.groupBox1.Controls.Add(this.ContactNumberTextBox);
+            this.groupBox1.Controls.Add(this.contactNumberTextBox);
             this.groupBox1.Controls.Add(this.nameTextBox);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -106,7 +106,6 @@
             this.itemComboBox.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.itemComboBox.BackColor = System.Drawing.SystemColors.Highlight;
             this.itemComboBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.itemComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.itemComboBox.FormattingEnabled = true;
             this.itemComboBox.Items.AddRange(new object[] {
             "Black",
@@ -118,6 +117,7 @@
             this.itemComboBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.itemComboBox.Size = new System.Drawing.Size(189, 28);
             this.itemComboBox.TabIndex = 2;
+            this.itemComboBox.Text = "Select An Item";
             // 
             // quantityTextBox
             // 
@@ -133,12 +133,12 @@
             this.addressTextBox.Size = new System.Drawing.Size(271, 26);
             this.addressTextBox.TabIndex = 1;
             // 
-            // ContactNumberTextBox
+            // contactNumberTextBox
             // 
-            this.ContactNumberTextBox.Location = new System.Drawing.Point(230, 133);
-            this.ContactNumberTextBox.Name = "ContactNumberTextBox";
-            this.ContactNumberTextBox.Size = new System.Drawing.Size(271, 26);
-            this.ContactNumberTextBox.TabIndex = 1;
+            this.contactNumberTextBox.Location = new System.Drawing.Point(230, 133);
+            this.contactNumberTextBox.Name = "contactNumberTextBox";
+            this.contactNumberTextBox.Size = new System.Drawing.Size(271, 26);
+            this.contactNumberTextBox.TabIndex = 1;
             // 
             // nameTextBox
             // 
@@ -215,7 +215,7 @@
         private System.Windows.Forms.ComboBox itemComboBox;
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.TextBox addressTextBox;
-        private System.Windows.Forms.TextBox ContactNumberTextBox;
+        private System.Windows.Forms.TextBox contactNumberTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
