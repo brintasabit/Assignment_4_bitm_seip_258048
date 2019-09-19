@@ -100,34 +100,45 @@ namespace Assignment_4_CoffeShop_List
                
         private void saveButton_Click(object sender, EventArgs e)
         {
+
             //purchaseRichTextBox.Text = "Purchase Information";
-            if (numbers.Contains(contactNumberTextBox.Text) == true)
+            try
             {
-                MessageBox.Show("Number Already Exists");
+                if (numbers.Contains(contactNumberTextBox.Text) == true)
+                {
+                    MessageBox.Show("Number Already Exists");
+                }
+                else if (itemComboBox.Text == "Select An Item")
+                {
+                    MessageBox.Show("Items Must Be Selected");
+                }
+                else if (String.IsNullOrEmpty(quantityTextBox.Text))
+                {
+                    MessageBox.Show("Quantity Can't Be Empty");
+
+                }
+
+                else
+                {
+                    // Convert.ToInt32(quantityTextBox.Text);
+                    AddInfo(contactNumberTextBox.Text, Convert.ToInt32(quantityTextBox.Text), itemComboBox.Text);
+
+
+                }
+                nameTextBox.Text = " ";
+                contactNumberTextBox.Text = " ";
+                addressTextBox.Text = " ";
+                itemComboBox.Text = "Select An Item";
+                quantityTextBox.Text = " ";
             }
-            else if (itemComboBox.Text=="Select An Item")
+            catch (Exception exception)
             {
-                MessageBox.Show("Items Must Be Selected");
-            }
-            else if (String.IsNullOrEmpty(quantityTextBox.Text))
-            {
-                MessageBox.Show("Quantity Can't Be Empty");
+                MessageBox.Show(exception.Message);
 
             }
-            
-            else
-            {
-                // Convert.ToInt32(quantityTextBox.Text);
-             AddInfo(contactNumberTextBox.Text, Convert.ToInt32(quantityTextBox.Text), itemComboBox.Text);
-                
 
-            }
+
             
-            nameTextBox.Text = " ";
-            contactNumberTextBox.Text = " ";
-            addressTextBox.Text = " ";
-            itemComboBox.Text = "Select An Item";
-            quantityTextBox.Text = " ";
             
             
         }
